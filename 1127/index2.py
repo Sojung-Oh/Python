@@ -242,7 +242,7 @@ class Health:
         self._hp += hour
         print(f"{hour} 시간 운동하다.")
 
-        if self._hp > 100:
+        if self._hp >= 100:
             return 100
         return self._hp
 
@@ -250,7 +250,7 @@ class Health:
     def drink(self, cup):
         self._hp -= cup
         print(f"술을 {cup} 잔 마시다.")
-        if self._hp < 0:
+        if self._hp <= 0:
             return 0
         return self._hp
     
