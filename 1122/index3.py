@@ -24,9 +24,8 @@
 # print(f"합계는 {total}입니다.")
 
 #조건문 사용
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-for num in numbers:
-    if num % 2 != 0:
-        print(num, end = " ")
-        
+# for num in numbers:
+#     if num % 2 != 0:
+#         print(num, end = " ")

@@ -36,14 +36,14 @@
 #     "hobby": ["런닝", "헬스", "낚시"]
 # }
 
-# # 키값만 순회
-# # for i in my_dic:
-# #     print(i, end = " ")
-# # print()
+# #키값만 순회
+# for i in my_dic:
+#     print(i, end = " ")
+# print()
 
-# # for i in my_dic.keys():
-# #     print(i, end = " ")
-# # print()
+# for i in my_dic.keys():
+#     print(i, end = " ")
+# print()
 
 # # for i in my_dic.values():
 # #     print(i, end = " , ")
