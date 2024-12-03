@@ -308,143 +308,141 @@ def intro(name, age, city):
 
 #실습 6 힘수 종합 프로그램
 
-# weather_data = [
-#     ["2024-11-20", "서울", 15.2, 0.0],
-#     ["2024-11-20", "부산", 18.4, 0.0],
-#     ["2024-11-21", "서울", 10.5, 2.3],
-#     ["2023-11-21", "부산", 14.6, 1.2],
-#     ["2024-11-22", "서울", 8.3, 0.0],
-#     ["2024-11-22", "부산", 12.0, 0.0]
-# ]
+weather_data = [
+    ["2024-11-20", "서울", 15.2, 0.0],
+    ["2024-11-20", "부산", 18.4, 0.0],
+    ["2024-11-21", "서울", 10.5, 2.3],
+    ["2023-11-21", "부산", 14.6, 1.2],
+    ["2024-11-22", "서울", 8.3, 0.0],
+    ["2024-11-22", "부산", 12.0, 0.0]
+]
 
 
 
-# def avg_temp(inn):
-#     result = []
-#     def check(inn):
-#         for i in range(len(weather_data)):
-#             if weather_data[i][1] == inn:
-#                 result.append(weather_data[i][2])
-#             else:
-#                 continue
-#         return result
+def avg_temp(inn):
+    result = []
+    def check(inn):
+        for i in range(len(weather_data)):
+            if weather_data[i][1] == inn:
+                result.append(weather_data[i][2])
+            else:
+                continue
+        return result
     
     
-#     li_result = check(inn)
-#     #print(li_result)
-#     #print(len(li_result))
-#     return sum(li_result) / len(li_result)
+    li_result = check(inn)
+    #print(li_result)
+    #print(len(li_result))
+    return sum(li_result) / len(li_result)
 
-# #print(avg_temp("서울"))
+#print(avg_temp("서울"))
 
-# def min_temp(inn):
-#     result = []
-#     def check(inn):
-#         for i in range(len(weather_data)):
-#             if weather_data[i][1] == inn: #기온 거르기
-#                 result.append(weather_data[i][2])
-#             else:
-#                 continue
-#         return result #도시 이름 걸러내기
+def min_temp(inn):
+    result = []
+    def check(inn):
+        for i in range(len(weather_data)):
+            if weather_data[i][1] == inn: #기온 거르기
+                result.append(weather_data[i][2])
+            else:
+                continue
+        return result #도시 이름 걸러내기
     
     
-#     li_result = check(inn)
-#     #print(li_result)
-#     #print(len(li_result))
-#     return min(li_result)
+    li_result = check(inn)
+    #print(li_result)
+    #print(len(li_result))
+    return min(li_result)
 
-# #print(min_temp("서울"))
+#print(min_temp("서울"))
 
-# def max_temp(inn):
-#     result = []
-#     def check(inn):
-#         for i in range(len(weather_data)):
-#             if weather_data[i][1] == inn: #기온 거르기
-#                 result.append(weather_data[i][2])
-#             else:
-#                 continue
-#         return result #도시 이름 걸러내기
+def max_temp(inn):
+    result = []
+    def check(inn):
+        for i in range(len(weather_data)):
+            if weather_data[i][1] == inn: #기온 거르기
+                result.append(weather_data[i][2])
+            else:
+                continue
+        return result #도시 이름 걸러내기
     
     
-#     li_result = check(inn)
-#     #print(li_result)
-#     #print(len(li_result))
-#     return max(li_result)
+    li_result = check(inn)
+    #print(li_result)
+    #print(len(li_result))
+    return max(li_result)
 
-# # print(max_temp("서울"))
+# print(max_temp("서울"))
 
-# def precip(inn):
-#     result = []
-#     def check(inn):
-#         for i in range(len(weather_data)):
-#             if weather_data[i][1] == inn: #강수량 거르기
-#                 result.append(weather_data[i][3])
-#             else:
-#                 continue
-#         return result #도시 이름 걸러내기
-#     li_result = check(inn)
+def precip(inn):
+    result = []
+    def check(inn):
+        for i in range(len(weather_data)):
+            if weather_data[i][1] == inn: #강수량 거르기
+                result.append(weather_data[i][3])
+            else:
+                continue
+        return result #도시 이름 걸러내기
+    li_result = check(inn)
 
-#     total = sum(li_result)
-#     count = 0
+    total = sum(li_result)
+    count = 0
 
-#     for i in range(len(li_result)):
-#         if li_result[i] != 0:
-#             count += 1
-#         else:
-#             continue
+    for i in range(len(li_result)):
+        if li_result[i] != 0:
+            count += 1
+        else:
+            continue
 
-#     return total, count
+    return total, count
 
-# # total, count = precip("서울")
-# # print(f"총 {total} mm, 총 {count} 일")
+# total, count = precip("서울")
+# print(f"총 {total} mm, 총 {count} 일")
 
-# def add_data(date, city, temp, prec):
-#     emp = [date, city, float(temp), float(prec)]
-#     weather_data.append(emp)
-
-
+def add_data(date, city, temp, prec):
+    emp = [date, city, float(temp), float(prec)]
+    weather_data.append(emp)
 
 
-# def data_show():
-#     print("현재 저장된 날씨 데이터: \n")
-#     for i in range(len(weather_data)):
-#         print(f"날짜: {weather_data[i][0]}, 도시: {weather_data[i][1]}, 평균 기온: {weather_data[i][2]} celsius, 강수량: {weather_data[i][3]}mm")   
+def data_show():
+    print("현재 저장된 날씨 데이터: \n")
+    for i in range(len(weather_data)):
+        print(f"날짜: {weather_data[i][0]}, 도시: {weather_data[i][1]}, 평균 기온: {weather_data[i][2]} celsius, 강수량: {weather_data[i][3]}mm")   
 
-# #data_show()
-# while True:
-#     print("[날씨 데이터 분석 프로그램] \n1.평균 기온 계산\n2.최고/최저 기온 찾기\n3.강수량 분석\n4.날씨 데이터 추가\n5.전체 데이터 출력\n6.종료(오소정)\n")
-#     inn = input("원하는 기능의 번호를 입력하세요: ")
-#     if inn == "1":
-#         inn2 = input("도시의 이름을 선택하세요(서울 부산 중 택 1): ")
-#         if inn2 == "서울" or inn2 == "부산":
-#             print(f"{inn2}의 평균 기온: {avg_temp(inn2):.2f} celsius \n\n\n")
+#data_show()
+while True:
+    print("[날씨 데이터 분석 프로그램] \n1.평균 기온 계산\n2.최고/최저 기온 찾기\n3.강수량 분석\n4.날씨 데이터 추가\n5.전체 데이터 출력\n6.종료(오소정)\n")
+    inn = input("원하는 기능의 번호를 입력하세요: ")
+    if inn == "1":
+        inn2 = input("도시의 이름을 선택하세요(서울 부산 중 택 1): ")
+        if inn2 == "서울" or inn2 == "부산":
+            print(f"{inn2}의 평균 기온: {avg_temp(inn2):.2f} celsius \n\n\n")
         
-#         else:
-#             print("잘못된 입력입니다.")
-#     elif inn == "2":
-#         inn2 = input("도시의 이름을 선택하세요(서울 부산 중 택 1): ")
-#         if inn2 == "서울" or inn2 == "부산":
-#             print(f"{inn2}의 최고 기온: {max_temp(inn2)} celsius, 최저 기온: {min_temp(inn2)} celsius\n\n\n")
+        else:
+            print("잘못된 입력입니다.")
+    elif inn == "2":
+        inn2 = input("도시의 이름을 선택하세요(서울 부산 중 택 1): ")
+        if inn2 == "서울" or inn2 == "부산":
+            print(f"{inn2}의 최고 기온: {max_temp(inn2)} celsius, 최저 기온: {min_temp(inn2)} celsius\n\n\n")
         
-#         else:
-#             print("잘못된 입력입니다.")
-#     elif inn == "3":
-#         inn2 = input("도시의 이름을 선택하세요(서울 부산 중 택 1): ")
-#         if inn2 == "서울" or inn2 == "부산":
-#             total, count = precip(inn2)
-#             print(f"{inn2}의 총 강수량: {total} mm\n{inn2}에 강수량이 있었던 날: {count}일\n\n\n")
-#         else:
-#             print("잘못된 입력입니다.")       
-#     elif inn == "4":
-#         date = input("\n날짜를 입력하세요. (YYYY-MM-DD): ")
-#         city = input("\n도시를 입력하세요.: ")
-#         temp = input("\n평균 기온을 입력하세요. (celsius): ")
-#         prec = input("\n강수량을 입력하세요.(mm): ")
-#         add_data(date, city, temp, prec)
-#         print(f"{city}의 날씨 데이터가 추가되었습니다. \n\n\n")
-#     elif inn == "5":
-#         data_show()
-#     elif inn == "6":
-#         break
-#     else:
-#         print("잘못돤 입력입니다.\n")
+        else:
+            print("잘못된 입력입니다.")
+    elif inn == "3":
+        inn2 = input("도시의 이름을 선택하세요(서울 부산 중 택 1): ")
+        if inn2 == "서울" or inn2 == "부산":
+            total, count = precip(inn2)
+            print(f"{inn2}의 총 강수량: {total} mm\n{inn2}에 강수량이 있었던 날: {count}일\n\n\n")
+        else:
+            print("잘못된 입력입니다.")       
+    elif inn == "4":
+        date = input("\n날짜를 입력하세요. (YYYY-MM-DD): ")
+        city = input("\n도시를 입력하세요.: ")
+        temp = input("\n평균 기온을 입력하세요. (celsius): ")
+        prec = input("\n강수량을 입력하세요.(mm): ")
+        add_data(date, city, temp, prec)
+        print(f"{city}의 날씨 데이터가 추가되었습니다. \n\n\n")
+    elif inn == "5":
+        data_show()
+    elif inn == "6":
+        break
+    else:
+        print("잘못돤 입력입니다.\n")
