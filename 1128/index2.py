@@ -1,5 +1,5 @@
-# #상속
-# #부모 클래스가 생성자가 없을 때
+#상속
+#부모 클래스가 생성자가 없을 때
 
 # class Animal:
 #     def speak(self):
@@ -20,7 +20,7 @@
 # cat.meow()
 
 
-#부모 클래스의 생성자가 존재할 때
+# #부모 클래스의 생성자가 존재할 때
 
 # class Animal:
 #     def __init__(self, name):
@@ -46,21 +46,21 @@
 # cat.move()
 # cat.meow()
 
-#다중 상속 
+# #다중 상속 
 
-##정보 은닉은 꼭 안 써도 됨! 게터 세터도 써도 되고 안 써도 된다
+# #정보 은닉은 꼭 안 써도 됨! 게터 세터도 써도 되고 안 써도 된다
 # class Engine:
 #     def __init__(self,horsepower):
 #         self.horsepower = horsepower
-#         self.count = 100
+#         self.count = 100 #클래스 변수
 
 # class Wheels:
 #     def __init__(self, count):
 #         self.count = count
 
 # class Car(Engine, Wheels):
-#     def __init__(self, horsepower, count, wheel_count):
-#         Engine.__init__(self, horsepower, count)
+#     def __init__(self, horsepower, wheel_count):
+#         Engine.__init__(self, horsepower)
 #         Wheels.__init__(self, wheel_count) #여기는 self까지 써줘야!
 
 #     def info(self):
@@ -70,12 +70,12 @@
 #         print(f"어디? {self.count}")
 
 # ######---------------------동일한 값이 들어갔을 때 오류가 나타나며 앞에 있는 엔진의 카운트가 들어가야 하는데 왜 오류가 안 날까?
-# car = Car(100, 50, 4)
-# #car.info()
+# car = Car(150, 4)
+# car.info()
 # car.test()
-# print(Car.mro()) 
+# print(Car.mro()) #mro를 사용하여 클래스의 상속 순서를 리스트에 반환
 
-#오버라이딩
+# #오버라이딩
 # class Parent:
 #     def greet(self):
 #         print("안녕하세요. 부모 클래스")
@@ -147,6 +147,67 @@
 # apple = Food("apple", 12, 20, "2024-12-25")
 # apple.is_expired("2025-01-02")
 # apple.display_info()
+
+# #리더님 예시 --------------실습. 상속과 오버라이딩
+# class Product:
+#     def __init__(self, name, price, quantity):
+#         self.name = name
+#         self.price = price
+#         self.quantity = quantity
+
+#     # 재고 업데이트 메서드
+#     def update_quantity(self, amount):
+#         self.quantity += amount
+#         print(f"{self.name} 재고가 {amount}만큼 {'증가' if amount > 0 else '감소'}했습니다. 현재 재고: {self.quantity}")
+
+#     # 상품 정보 출력 메서드
+#     def display_info(self):
+#         print(f"상품명: {self.name}")
+#         print(f"가격: {self.price}원")
+#         print(f"재고: {self.quantity}개")
+
+# #자식 클래스
+# class Electronic(Product):
+#     def __init__(self, name, price, quantity, warranty_period=12):
+#         super().__init__(name, price, quantity)
+#         self.warranty_period = warranty_period
+
+#     #보증기간 연장
+#     def extend_warranty(self, months):
+#         self.warranty_period += months
+#         print(f"보증기간이 {months}개월 연장. 현재 보증기간{self.warranty_period}개월")
+    
+#     #오버라이딩
+#     def display_info(self):
+#         super().display_info()
+#         print(f"보증기간: {self.warranty_period}개월")
+
+# class Food(Product):
+#     def __init__(self, name, price, quantity, expiration_date):
+#         super().__init__(name, price, quantity)
+#         self.expiration_date = expiration_date
+
+#     #유통기한 확인
+#     def is_expired(self, current_date):
+#         if current_date > self.expiration_date:
+#             print(f"{self.name}은/는 유통기한이 지났습니다.")
+#         else:
+#             print(f"{self.name}은/는 유통기한이 지나지 않았습니다")
+
+#     def display_info(self):
+#         super().display_info()
+#         print(f"유통기한 : {self.expiration_date}")
+
+    
+# tv = Electronic("삼성스마트TV", 1500000, 2, 24)
+# # tv.display_info()
+# # tv.extend_warranty(12)
+# # tv.display_info()
+
+# milk = Food("서울우유", 3000, 30, "2024-12-10")
+# milk.is_expired("2024-11-28")
+# milk.is_expired("2024-12-28")
+# milk.display_info()
 
 #추상화
 #추상 클래스
@@ -254,112 +315,112 @@
 
 # 실습. 클래스 종합 프로그래밍
 
-#날짜별 전력량
-electricity_usage = [
-    {"date": "2024-11-01", "usage": 12.5},
-    {"date": "2024-11-02", "usage": 15.3},
-    {"date": "2024-11-03", "usage": 10.8},
-    {"date": "2024-11-04", "usage": 14.2},
-    {"date": "2024-11-05", "usage": 13.6},
-]
+# #날짜별 전력량
+# electricity_usage = [
+#     {"date": "2024-11-01", "usage": 12.5},
+#     {"date": "2024-11-02", "usage": 15.3},
+#     {"date": "2024-11-03", "usage": 10.8},
+#     {"date": "2024-11-04", "usage": 14.2},
+#     {"date": "2024-11-05", "usage": 13.6},
+# ]
 
-#추상 클래스 생성 
-from abc import ABC, abstractmethod
+# #추상 클래스 생성 
+# from abc import ABC, abstractmethod
 
-class ElectricityData(ABC):
+# class ElectricityData(ABC):
     
-    def __init__(self, usage_data, total_usage = 0):
-        self._usage_data = usage_data
-        self._total_usage = total_usage
+#     def __init__(self, usage_data, total_usage = 0):
+#         self._usage_data = usage_data
+#         self._total_usage = total_usage
 
-    #Getter
-    @property
-    def usage_data(self):
-        return self._usage_data
+#     #Getter
+#     @property
+#     def usage_data(self):
+#         return self._usage_data
     
-    #Setter
-    @usage_data.setter
-    def usage_data(self, value):
-        self._usage_data = value
+#     #Setter
+#     @usage_data.setter
+#     def usage_data(self, value):
+#         self._usage_data = value
 
-    #Getter
-    @property
-    def total_usage(self):
-        return self._total_usage
+#     #Getter
+#     @property
+#     def total_usage(self):
+#         return self._total_usage
     
-    #Setter
-    @total_usage.setter
-    def total_usage(self, value):
-        self._total_usage = value
+#     #Setter
+#     @total_usage.setter
+#     def total_usage(self, value):
+#         self._total_usage = value
 
 
-    #추상 메서드
-    @abstractmethod
-    def calculate_total_usage(self):
-        pass
+#     #추상 메서드
+#     @abstractmethod
+#     def calculate_total_usage(self):
+#         pass
 
-    @abstractmethod
-    def get_usage_on_date(self, date):
-        pass
+#     @abstractmethod
+#     def get_usage_on_date(self, date):
+#         pass
 
-    #일반 메서드
+#     #일반 메서드
     
-    def add_usage(self, date, usage): #새로운 날짜의 전력 사용량을 추가
-        new_data = {
-            "date": date,
-            "usage": usage
-        }
+#     def add_usage(self, date, usage): #새로운 날짜의 전력 사용량을 추가
+#         new_data = {
+#             "date": date,
+#             "usage": usage
+#         }
 
-        self._usage_data.append(new_data)
+#         self._usage_data.append(new_data)
 
-    def remove_usage(self, date):
-        self._usage_data = filter(lambda x: x["date"] != date, self._usage_data) #날짜 일치하지 않는 딕셔너리만 걸러냄
+#     def remove_usage(self, date):
+#         self._usage_data = filter(lambda x: x["date"] != date, self._usage_data) #날짜 일치하지 않는 딕셔너리만 걸러냄
     
-# 자식 클래스
+# # 자식 클래스
 
-class HomeElectricityData(ElectricityData):
-    def calculate_total_usage(self): #전력 사용량 데이터를 기반으로 총 사용량 계산
-        usage_data = map(lambda x: x["usage"], self._usage_data)
-        #print(list(usage_data)) #----------이부분을 넣으면 왜 오류날까....
-        list_usage_data = list(usage_data)
-        #print(list_usage_data)
-        total_sum = sum(list_usage_data)
-        print(f"총 전력 사용량: {total_sum}")
+# class HomeElectricityData(ElectricityData):
+#     def calculate_total_usage(self): #전력 사용량 데이터를 기반으로 총 사용량 계산
+#         usage_data = map(lambda x: x["usage"], self._usage_data)
+#         #print(list(usage_data)) #----------이부분을 넣으면 왜 오류날까....
+#         list_usage_data = list(usage_data)
+#         #print(list_usage_data)
+#         total_sum = sum(list_usage_data)
+#         print(f"총 전력 사용량: {total_sum}")
         
     
-    def get_usage_on_date(self, date): #특정 날짜의 전력 사용량을 반환
-        the_data = filter(lambda x: x["date"] == date, self._usage_data) #날짜 일치하는 딕셔너리 찾기
-        thedata = list(the_data)
-        #print(thedata[0]['usage'])
-        dt_usage = thedata[0]['usage'] #filter() 의 결과값이 항상 리스트? list() 함수는 프린트 내부에 쓰면 오류 나는 건가?
-        print(f"{date}의 사용량: {dt_usage}")
+#     def get_usage_on_date(self, date): #특정 날짜의 전력 사용량을 반환
+#         the_data = filter(lambda x: x["date"] == date, self._usage_data) #날짜 일치하는 딕셔너리 찾기
+#         thedata = list(the_data)
+#         #print(thedata[0]['usage'])
+#         dt_usage = thedata[0]['usage'] #filter() 의 결과값이 항상 리스트? list() 함수는 프린트 내부에 쓰면 오류 나는 건가?
+#         print(f"{date}의 사용량: {dt_usage}")
     
-    #클래스 메서드
-    @classmethod
-    def date_filtering(cls, date1, date2): # 클래스 메서드를 사용하여 electricity_usage 리스트에서 특정 날짜 범위 내의 데이터 필터링하는 기능 
-        filtered_usage_data = filter(lambda x: x["date"] >= date1 and x["date"] <= date2, electricity_usage)
-        list_filtered_data = list(filtered_usage_data)
-        print(f"특정 날짜 범위 내 사용량: {list_filtered_data}")
+#     #클래스 메서드
+#     @classmethod
+#     def date_filtering(cls, date1, date2): # 클래스 메서드를 사용하여 electricity_usage 리스트에서 특정 날짜 범위 내의 데이터 필터링하는 기능 
+#         filtered_usage_data = filter(lambda x: x["date"] >= date1 and x["date"] <= date2, electricity_usage)
+#         list_filtered_data = list(filtered_usage_data)
+#         print(f"특정 날짜 범위 내 사용량: {list_filtered_data}")
     
-    # 정적 메서드 
-    @staticmethod
-    def max_usage_data(): #정적 메서드를 사용하여 전력사용량 데이터에서 가장 높은 사용량을 찾는 기능
-        list_usage = list(map(lambda x: x["usage"], electricity_usage))
-        #print(list_usage)
-        max_usage_value = max(list_usage)
-        #print(max_usage_value)
-        max_usage = filter(lambda x: x["usage"] == max_usage_value, electricity_usage)
-        list_max_usage = list(max_usage)
-        print(f"가장 높은 전력 사용량: {list_max_usage[0]}")
+#     # 정적 메서드 
+#     @staticmethod
+#     def max_usage_data(): #정적 메서드를 사용하여 전력사용량 데이터에서 가장 높은 사용량을 찾는 기능
+#         list_usage = list(map(lambda x: x["usage"], electricity_usage))
+#         #print(list_usage)
+#         max_usage_value = max(list_usage)
+#         #print(max_usage_value)
+#         max_usage = filter(lambda x: x["usage"] == max_usage_value, electricity_usage)
+#         list_max_usage = list(max_usage)
+#         print(f"가장 높은 전력 사용량: {list_max_usage[0]}")
 
-data1 = HomeElectricityData(electricity_usage)
-data1._usage_data = electricity_usage
-data1._total_usage = 0
+# data1 = HomeElectricityData(electricity_usage)
+# data1._usage_data = electricity_usage
+# data1._total_usage = 0
 
-data1.calculate_total_usage()
-data1.add_usage("2024-11-06", 16.4)
-data1.get_usage_on_date("2024-11-03")
-print("2024-11-06 데이터 추가 후", end = "")
-data1.calculate_total_usage()
-data1.date_filtering("2024-11-02", "2024-11-04")
-data1.max_usage_data()
+# data1.calculate_total_usage()
+# data1.add_usage("2024-11-06", 16.4)
+# data1.get_usage_on_date("2024-11-03")
+# print("2024-11-06 데이터 추가 후", end = "")
+# data1.calculate_total_usage()
+# data1.date_filtering("2024-11-02", "2024-11-04")
+# data1.max_usage_data()

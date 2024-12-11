@@ -32,8 +32,8 @@
 #     def __str__(self):
 #         return f"모델명: {self.model}, 배기량: {self.cc}cc"
 
-#     def info(self):
-#         print(f"모델명: {self.model}, 배기량: {self.cc}cc")
+#     # def info(self):
+#     #     print(f"모델명: {self.model}, 배기량: {self.cc}cc")
 
 
 # car1 = Car("싼타페", 2000) #생성할 때 값을 넣어줌!
@@ -53,7 +53,7 @@
 # for car in cars:
 #     print(car)
 
-# 실습1. 사칙연산 클래스 만들기
+#실습1. 사칙연산 클래스 만들기
 
 # class Four:
 #     def __init__(self, first, second):
@@ -123,7 +123,7 @@
 # print(e1.name)
 # print(e2.name) #인스턴스의 변경은 공유되지 않는다
 
-# 사번 자동 발급
+#사번 자동 발급
 # class Employee:
 #     serial_num = 1000 #클래스 변수
 
@@ -167,14 +167,15 @@
 #         print(f"상품 : {self.product}")
 
 #     def enter_customer(self):
-#         #self.customer += 1
+#         self.customer += 1
 #         Supermarket.total_customer += 1
     
 #     def show_info(self):
 #         print(f"가게 이름: {self.name}")
 #         print(f"위치: {self.location}")
 #         print(f"상품: {self.product}")
-#         print(f"손님 수: {Supermarket.total_customer}\n\n\n")
+#         print(f"가게의 손님 수: {self.customer}")
+#         print(f"총 손님 수: {Supermarket.total_customer}\n\n\n")
 
 # sup1 = Supermarket("마포구 염리동", "마켓온", "음료", 12)
 # sup2 = Supermarket("마포구 신설동", "마켓플리", "라면", 7)
@@ -220,42 +221,42 @@
 # print(p1.getage()) #정보 은닉을 위함
 
 # 실습3. 건강 상태 클래스 만들기
-class Health:
+# class Health:
 
-    def __init__(self) -> None:
-        self._name = ""
-        self._hp = 100
+#     def __init__(self) -> None:
+#         self._name = ""
+#         self._hp = 100
     
-    def setname(self, name):
-        self._name = name
+#     def setname(self, name):
+#         self._name = name
     
-    def getname(self):
-        return self._name
+#     def getname(self):
+#         return self._name
     
-    def sethp(self, hp):
-        self._hp = hp
+#     def sethp(self, hp):
+#         self._hp = hp
     
-    def getage(self):
-        return self._hp
+#     def gethp(self):
+#         return self._hp
 
-    def workout(self, hour):
-        self._hp += hour
-        print(f"{hour} 시간 운동하다.")
+#     def workout(self, hour):
+#         self._hp += hour
+#         print(f"{hour} 시간 운동하다.")
 
-        if self._hp >= 100:
-            return 100
-        return self._hp
+#         if self._hp >= 100:
+#             return 100
+#         return self._hp
 
 
-    def drink(self, cup):
-        self._hp -= cup
-        print(f"술을 {cup} 잔 마시다.")
-        if self._hp <= 0:
-            return 0
-        return self._hp
+#     def drink(self, cup):
+#         self._hp -= cup
+#         print(f"술을 {cup} 잔 마시다.")
+#         if self._hp <= 0:
+#             return 0
+#         return self._hp
     
-    def show_hp(self):
-        print(f"{self._name}  -  hp: {self._hp}")
+#     def show_hp(self):
+#         print(f"{self._name}  -  hp: {self._hp}")
 
 # p1 = Health()
 # p1.setname("나몸짱")
@@ -264,7 +265,7 @@ class Health:
 # p1.drink(12)
 # p1.show_hp()
 
-a = "[{0:,}]".format(12345678900)
-print(a)
+# a = "[{0:,}]".format(12345678900)
+# print(a)
 
 
