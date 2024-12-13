@@ -32,7 +32,7 @@ from datetime import datetime, timedelta, timezone
 # next_week = now + timedelta(weeks = 1, hours = 1)
 # print(next_week)
 
-# # 타임존 계산
+# 타임존 계산
 
 # print(timezone.utc)
 # print(datetime.now(timezone.utc))
@@ -65,12 +65,12 @@ from datetime import datetime, timedelta, timezone
 
 # import math
 
-# # print(math.pi)
-# # print(math.sqrt(25))
-# # print(math.factorial(5))
+# print(math.pi)
+# print(math.sqrt(25))
+# print(math.factorial(5))
 # print(math.ceil(2.43)) #올림
 # print(math.floor(4.88)) #버림
-# print(round(2.51)) #반올림
+# print(round(2.5)) #반올림
 
 # import random 
 # import math
@@ -102,20 +102,20 @@ from datetime import datetime, timedelta, timezone
 # pick.sort()
 # print(pick)
 
-# import sys
+import sys
 
-# # print(sys.argv) 
-# # print(sys.argv[1:])
+print(sys.argv) 
+print(sys.argv[1:])
 
-# if "-h" in sys.argv or "--help" in sys.argv:
-#     print("사용법: python main.py [옵션]")
-#     print("-h, --help               도움말 표시")
-#     print("-v, --version            버전 정보 표시")
-#     sys.exit(0) # 프로그램 종료
+if "-h" in sys.argv or "--help" in sys.argv:
+    print("사용법: python main.py [옵션]")
+    print("-h, --help               도움말 표시")
+    print("-v, --version            버전 정보 표시")
+    sys.exit(0) # 프로그램 종료
 
-# if "-v" in sys.argv or "--version" in sys.argv:
-#     print("버전 : 1.0.0")
-#     sys.exit(0)
+if "-v" in sys.argv or "--version" in sys.argv:
+    print("버전 : 1.0.0")
+    sys.exit(0)
 
 
 import os
@@ -148,28 +148,28 @@ import os
 
 #종료 조건 : 단어 3개 테스트
 
-import random, time
-words = ["mountain", "river", "forest", "ocean", "desert", "tree", "flower", "cloud", "rain", "sunlight"]
-num = 3 #입력해야할 단어 개수
-pick = random.sample(words, num)
+# import random, time
+# words = ["mountain", "river", "forest", "ocean", "desert", "tree", "flower", "cloud", "rain", "sunlight"]
+# num = 3 #입력해야할 단어 개수
+# pick = random.sample(words, num)
 
-start = time.perf_counter() #시간 측정
-count = 0
-for i in range(num):
-    while True:
-        print(f"단어: {pick[i]}")
-        answer = input("입력: ")
-        count += 1
-        if pick[i] == answer:
-            print("통과!\n")
-            break
-        else:
-            print("오타! 다시 시도하세요.")
+# start = time.perf_counter() #시간 측정
+# count = 0
+# for i in range(num):
+#     while True:
+#         print(f"단어: {pick[i]}")
+#         answer = input("입력: ")
+#         count += 1
+#         if pick[i] == answer:
+#             print("통과!\n")
+#             break
+#         else:
+#             print("오타! 다시 시도하세요.")
 
 
-end = time.perf_counter()
-print("\n게임 종료!")
-print(f"총 {num}개의 단어를 {count}회 입력하셨습니다.")
-print(f"총 걸린 시간: {end-start:.3f}")
-print(f"단어당 걸린 평균 시간: {(end-start)/num:.3f}")
-print(f"회 당 걸린 평균 시간: {(end-start)/count:.3f}")
+# end = time.perf_counter()
+# print("\n게임 종료!")
+# print(f"총 {num}개의 단어를 {count}회 입력하셨습니다.")
+# print(f"총 걸린 시간: {end-start:.3f}")
+# print(f"단어당 걸린 평균 시간: {(end-start)/num:.3f}")
+# print(f"회 당 걸린 평균 시간: {(end-start)/count:.3f}")

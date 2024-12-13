@@ -259,7 +259,7 @@
 #     @classmethod
 #     def from_birth_year(cls, name, birth_year):
 #         age = 2024- birth_year
-#         return name, age
+#         return cls(name, age)
 
 # #생성자가 아닌 클래스 메서드를 통해서 객체 생성!
 # p1 = Person.from_birth_year("홍길동", 1990)
@@ -267,7 +267,7 @@
 # print(p1.name, p1.age)
 
 
-#----------------클래스 변수를 사용하는 법
+# #----------------클래스 변수를 사용하는 법
 # class Counter:
 #     count = 0 #클래스 변수
 
@@ -284,7 +284,7 @@
 # Counter.increment()
 # print(Counter.get_count())
 
-#자식 클래스의 정보유지
+# #자식 클래스의 정보유지
 # class Animal:
 #     species = "동물"
 
@@ -298,20 +298,20 @@
 # print(Animal.get_species())
 # print(Dog.get_species()) #서브 클래스에서 호출할 때 서브 클래스의 정보를 유지 시켜준다.
 
-# # 정적 메서드
-# class MathUtils:
-#     @staticmethod
-#     def add(a,b):
-#         return a + b
+# 정적 메서드
+class MathUtils:
+    @staticmethod
+    def add(a,b):
+        return a + b
     
-#     @staticmethod
-#     def minus(a,b):
-#         return a - b
+    @staticmethod
+    def minus(a,b):
+        return a - b
 
-# #어떤 기능을 다 모아두거나 굳이 인스턴스를 선언할 필요가 없을 땨
+#어떤 기능을 다 모아두거나 굳이 인스턴스를 선언할 필요가 없을 땨
 
-# print(MathUtils.add(30, 40))
-# print(MathUtils.minus(10, 20))
+print(MathUtils.add(30, 40))
+print(MathUtils.minus(10, 20))
 
 # 실습. 클래스 종합 프로그래밍
 
