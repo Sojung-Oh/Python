@@ -1,13 +1,15 @@
-# 파일 입출력
-# 파일 쓰기
+# #파일 입출력
+# #파일 쓰기
 # with open("test.txt", "w", encoding="utf-8") as file: #쓰기 모드
 #     file.write("안녕하세요\n")
-#     file.write("파이썬 쓰기 연습 \n")
+#     file.write("파이썬 쓰기 연습중입니다. \n")
+# print("파일에 데이터가 작성되었습니다.")
 
 
 # # 파일 추가
 # with open("test.txt", "a", encoding="utf-8") as file:
 #     file.write("내용 추가\n")
+# print("파일에 데이터가 추가되었습니다.")
 
 # lines = ["첫번째\n", "두번째\n", "세번째\n"]
 
@@ -22,7 +24,7 @@
 #             break
 #         file.write(line + "\n")
 
-#파일 읽기
+# #파일 읽기
 # with open("user.txt", "r", encoding="utf-8") as file:
 #     print(file.read())
 

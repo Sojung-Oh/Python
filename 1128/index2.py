@@ -298,20 +298,20 @@
 # print(Animal.get_species())
 # print(Dog.get_species()) #서브 클래스에서 호출할 때 서브 클래스의 정보를 유지 시켜준다.
 
-# 정적 메서드
-class MathUtils:
-    @staticmethod
-    def add(a,b):
-        return a + b
+# # 정적 메서드
+# class MathUtils:
+#     @staticmethod
+#     def add(a,b):
+#         return a + b
     
-    @staticmethod
-    def minus(a,b):
-        return a - b
+#     @staticmethod
+#     def minus(a,b):
+#         return a - b
 
-#어떤 기능을 다 모아두거나 굳이 인스턴스를 선언할 필요가 없을 땨
+# #어떤 기능을 다 모아두거나 굳이 인스턴스를 선언할 필요가 없을 땨
 
-print(MathUtils.add(30, 40))
-print(MathUtils.minus(10, 20))
+# print(MathUtils.add(30, 40))
+# print(MathUtils.minus(10, 20))
 
 # 실습. 클래스 종합 프로그래밍
 

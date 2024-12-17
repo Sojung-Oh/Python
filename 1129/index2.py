@@ -102,33 +102,37 @@ from datetime import datetime, timedelta, timezone
 # pick.sort()
 # print(pick)
 
-import sys
+# import sys
 
-print(sys.argv) 
-print(sys.argv[1:])
+# print(sys.argv) 
+# print(sys.argv[1:])
 
-if "-h" in sys.argv or "--help" in sys.argv:
-    print("사용법: python main.py [옵션]")
-    print("-h, --help               도움말 표시")
-    print("-v, --version            버전 정보 표시")
-    sys.exit(0) # 프로그램 종료
+# if "-h" in sys.argv or "--help" in sys.argv:
+#     print("사용법: python main.py [옵션]")
+#     print("-h, --help               도움말 표시")
+#     print("-v, --version            버전 정보 표시")
+#     sys.exit(0) # 프로그램 종료
 
-if "-v" in sys.argv or "--version" in sys.argv:
-    print("버전 : 1.0.0")
-    sys.exit(0)
+# if "-v" in sys.argv or "--version" in sys.argv:
+#     print("버전 : ", sys.version)
+#     sys.exit(0)
 
 
-import os
+# import os
 
 # dir_current = os.getcwd() #현재 위치 나타내기
-# print(dir_current)
+# print('현재 위치: ',dir_current)
 # file_path = os.chdir(dir_current) #이 경로로 이동
 # dir = os.popen('ls') #해당 폴더에 와서 ls로 조회
 # print(dir.read()) #조회한 내용 읽어들이기
 
-#os.mkdir("test") #test라는 폴더 생성하기
-#os.rmdir("test")
-#print(os.environ.get('PATH')) #환경 변수 출력
+# os.mkdir("test") #test라는 폴더 생성하기
+# print(('디렉토리 생성: test'))
+# os.rmdir("test")
+# print(('디렉토리 삭제: test'))
+
+# #환경 변수 확인
+# print('PATH 환경 변수: ', os.environ.get('PATH')) #환경 변수 출력
 
 # import json
 
