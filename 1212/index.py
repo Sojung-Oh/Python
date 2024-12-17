@@ -135,8 +135,6 @@ center = (w // 2, h // 2) #몫
 matrix = cv2.getRotationMatrix2D(center, 90, 1.0)
 rotated = cv2.warpAffine(image_color, matrix, (w, h)) #원본, 변환 행렬
 
-
-
 cv2.waitKey(0)
 cv2.imwrite('./1212/90rotation_image.jpg', rotated)
 

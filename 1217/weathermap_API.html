@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1944b9d2dfea78bbb4cb5253eaaa7e2b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1944b9d2dfea78bbb4cb5253eaaa7e2b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1944b9d2dfea78bbb4cb5253eaaa7e2b = L.map(
+                "map_1944b9d2dfea78bbb4cb5253eaaa7e2b",
+                {
+                    center: [36.841375, 127.930471],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a712dfccd7c812cce6429be3154b8dbb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a712dfccd7c812cce6429be3154b8dbb.addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var marker_849eb46d41704a62010cb936ace89f63 = L.marker(
+                [37.551698, 126.989231],
+                {
+}
+            ).addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var icon_c89934ad485e79323c1111247355d812 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_849eb46d41704a62010cb936ace89f63.setIcon(icon_c89934ad485e79323c1111247355d812);
+        
+    
+        var popup_4455663ec9e37004ff3e74a624b57de9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e39ed747c191c8262f533ed728825d68 = $(`<div id="html_e39ed747c191c8262f533ed728825d68" style="width: 100.0%; height: 100.0%;">     <b>도시:</b> 서울<br />     <b>온도:</b/> -274.78999999999996 ℃<br />     <b>날씨:</b? 약간의 구름이 낀 하늘     </div>`)[0];
+                popup_4455663ec9e37004ff3e74a624b57de9.setContent(html_e39ed747c191c8262f533ed728825d68);
+            
+        
+
+        marker_849eb46d41704a62010cb936ace89f63.bindPopup(popup_4455663ec9e37004ff3e74a624b57de9)
+        ;
+
+        
+    
+    
+            tile_layer_a712dfccd7c812cce6429be3154b8dbb.addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var marker_432e13beb126cc27de14d28836af9a9c = L.marker(
+                [35.191985, 129.115998],
+                {
+}
+            ).addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var icon_f0ae9df82709a6ecb8e8c1858d5cf545 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_432e13beb126cc27de14d28836af9a9c.setIcon(icon_f0ae9df82709a6ecb8e8c1858d5cf545);
+        
+    
+        var popup_df58113cdfdd11e27e2368e706a7201f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_562817cea93d11c1ecf92b142b776194 = $(`<div id="html_562817cea93d11c1ecf92b142b776194" style="width: 100.0%; height: 100.0%;">     <b>도시:</b> 부산<br />     <b>온도:</b/> -270.15999999999997 ℃<br />     <b>날씨:</b? 맑음     </div>`)[0];
+                popup_df58113cdfdd11e27e2368e706a7201f.setContent(html_562817cea93d11c1ecf92b142b776194);
+            
+        
+
+        marker_432e13beb126cc27de14d28836af9a9c.bindPopup(popup_df58113cdfdd11e27e2368e706a7201f)
+        ;
+
+        
+    
+    
+            tile_layer_a712dfccd7c812cce6429be3154b8dbb.addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var marker_2a13c442ec5c81bb9384f6f1a22305b1 = L.marker(
+                [36.341553, 127.403237],
+                {
+}
+            ).addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var icon_5b62def29a4092c8eb24c22fd4d4ff40 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2a13c442ec5c81bb9384f6f1a22305b1.setIcon(icon_5b62def29a4092c8eb24c22fd4d4ff40);
+        
+    
+        var popup_8e9fe0c0023f445b192e672b98e5e6e4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_604c9b3a7930905fa7cc67ca27936c60 = $(`<div id="html_604c9b3a7930905fa7cc67ca27936c60" style="width: 100.0%; height: 100.0%;">     <b>도시:</b> 대전<br />     <b>온도:</b/> -273.63 ℃<br />     <b>날씨:</b? 구름조금     </div>`)[0];
+                popup_8e9fe0c0023f445b192e672b98e5e6e4.setContent(html_604c9b3a7930905fa7cc67ca27936c60);
+            
+        
+
+        marker_2a13c442ec5c81bb9384f6f1a22305b1.bindPopup(popup_8e9fe0c0023f445b192e672b98e5e6e4)
+        ;
+
+        
+    
+    
+            tile_layer_a712dfccd7c812cce6429be3154b8dbb.addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var marker_026c4042d014ae1d1d2ae66c88668a3f = L.marker(
+                [35.871471, 128.601614],
+                {
+}
+            ).addTo(map_1944b9d2dfea78bbb4cb5253eaaa7e2b);
+        
+    
+            var icon_b9214b30c2d207525f473dd6069b5bb7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "cloud",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_026c4042d014ae1d1d2ae66c88668a3f.setIcon(icon_b9214b30c2d207525f473dd6069b5bb7);
+        
+    
+        var popup_5edffefb2acc1264f4e278e06d84a247 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f2de7a2894bdcc7076128b55747f023f = $(`<div id="html_f2de7a2894bdcc7076128b55747f023f" style="width: 100.0%; height: 100.0%;">     <b>도시:</b> 대구<br />     <b>온도:</b/> -269.23999999999995 ℃<br />     <b>날씨:</b? 맑음     </div>`)[0];
+                popup_5edffefb2acc1264f4e278e06d84a247.setContent(html_f2de7a2894bdcc7076128b55747f023f);
+            
+        
+
+        marker_026c4042d014ae1d1d2ae66c88668a3f.bindPopup(popup_5edffefb2acc1264f4e278e06d84a247)
+        ;
+
+        
+    
+</script>
+</html>
