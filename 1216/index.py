@@ -176,20 +176,20 @@ model = YOLO('yolov8n.pt') #YOLO 모델, v8,n: nano 버전
 image  = cv2.imread('./1216/test.jpg')
 
 #----------------------
-from torchvision import datasets
+# from torchvision import datasets
 
-dir(datasets)
+# dir(datasets)
 #------------------
 
-# #객체 탐지
-# results = model.predict(source='./1216/test.jpg', save=False, save_txt=False, conf=0.5) #conf는 신뢰도, 이미지 자체의 경로를 써도 된다
+#객체 탐지
+results = model.predict(source='./1216/test.jpg', save=False, save_txt=False, conf=0.5) #conf는 신뢰도, 이미지 자체의 경로를 써도 된다
 
-# #결과 시각화
-# frame = results[0].plot() #plot(): 탐지된 객체를 시각화한 이미지를 반환
+#결과 시각화
+frame = results[0].plot() #plot(): 탐지된 객체를 시각화한 이미지를 반환
 
-# cv2.imshow('YOLO', frame)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows() #ModuleNotFoundError: No module named 'torchvision.datasets.caltech'????
+cv2.imshow('YOLO', frame)
+cv2.waitKey(0)
+cv2.destroyAllWindows() #ModuleNotFoundError: No module named 'torchvision.datasets.caltech'????
 #"""
 
 """
